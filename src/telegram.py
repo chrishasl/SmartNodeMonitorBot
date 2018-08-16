@@ -278,7 +278,7 @@ class MessagingMachine(object):
                 logger.warning("Exception: RetryAfter {}".format(e))
 
                 queue.lock(e.retry_after)
-                warnMessage = messages.rateLimitError(self.messenger, util.secondsToText(int(e.retry_after)))
+                warnMessage = messages.rateLimitError(self.bot.messenger, util.secondsToText(int(e.retry_after)))
                 self.bot.sendMessage(chat_id=chatId, text = warnMessage ,parse_mode=telegram.ParseMode.MARKDOWN )
 
             except TelegramError as e:
