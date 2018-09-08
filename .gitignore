@@ -100,7 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 
-smart.conf
 bot.db
 nodes.db
 .last
